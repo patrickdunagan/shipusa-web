@@ -7,8 +7,6 @@ import MailBoxServicesSection from "@/components/MailBoxServicesSection";
 import PersonalServicesSection from "@/components/PersonalServicesSection";
 
 export default function Home() {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <PageLayout>

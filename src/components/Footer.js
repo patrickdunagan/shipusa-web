@@ -1,6 +1,6 @@
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import { Grid, Stack, Link, Box, Typography, Divider, Container } from '@mui/material';
+import { Grid, Stack, Link, Box, Typography, Container } from '@mui/material';
 import { palette } from '../styles/palette';
 
 export default function Footer() {

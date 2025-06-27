@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Grid, Paper } from '@mui/material';
+import { Box, Container, Typography, Grid } from '@mui/material';
 import PageLayout from '@/components/PageLayout';
 
 export default function AboutUs() {
@@ -24,9 +24,9 @@ export default function AboutUs() {
               Built to Serve the Community
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              ShipUSA was founded with a simple mission: to offer trusted, local service with the reliability of national carriers. Whether you're shipping across town or across the country, we treat every package like it's our own.
+              {"ShipUSA was founded with a simple mission: to offer trusted, local service with the reliability of national carriers. Whether you're shipping across town or across the country, we treat every package like it's our own."}
               <br /><br />
-              As an authorized U-Haul and USPS partner, and a recognized drop-off location for Amazon, FedEx, UPS, and DHL — we’ve become the go-to spot for personal and business shipping needs in the area.
+              {"As an authorized U-Haul and USPS partner, and a recognized drop-off location for Amazon, FedEx, UPS, and DHL — we’ve become the go-to spot for personal and business shipping needs in the area."}
             </Typography>
           </Grid>
           <Grid item xs={12} md={6}>
@@ -51,7 +51,7 @@ export default function AboutUs() {
               More Than Just Shipping
             </Typography>
           <Typography variant="body1" color="text.secondary" paragraph>
-  At ShipUSA, we provide a full suite of business and personal services including:
+  {"At ShipUSA, we provide a full suite of business and personal services including:"}
 </Typography>
 
 <Box component="ul" sx={{ pl: 3, mb: 2 }}>
@@ -62,7 +62,7 @@ export default function AboutUs() {
 </Box>
 
 <Typography variant="body1" color="text.secondary">
-  We believe in going beyond transactions — we aim to be a resource, a partner, and a friendly face you can rely on.
+  {"We believe in going beyond transactions — we aim to be a resource, a partner, and a friendly face you can rely on."}
 </Typography>
 
           </Grid>
@@ -86,10 +86,10 @@ export default function AboutUs() {
          
           <Grid item xs={12} md={6}>
             <Typography variant="h5" fontWeight="bold" gutterBottom>
-              An Authorized U-Haul Dealer
+              {"An Authorized U-Haul Dealer"}
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              Whether you're moving across town or across the country, our U-Haul truck rentals are here to make the process smoother. We offer various vehicle sizes and rental plans to match your needs, backed by reliable service from a local team you can trust.
+              {"Whether you're moving across town or across the country, our U-Haul truck rentals are here to make the process smoother. We offer various vehicle sizes and rental plans to match your needs, backed by reliable service from a local team you can trust."}
             </Typography>
           </Grid>
            <Grid item xs={12} md={6}>

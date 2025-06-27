@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import {
     AppBar,
     Box,
@@ -14,7 +13,6 @@ import {
     ListItemText,
     Divider,
     useScrollTrigger,
-    Container,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { palette } from "../styles/palette";
@@ -159,4 +157,3 @@ export default function PageLayout({ children }) {
         </Box>
     );
 }
-    

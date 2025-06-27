@@ -17,7 +17,7 @@ export default function ShippingPartners() {
         </Typography>
 
         <Typography variant="body1" align="center" sx={{ mb: 4 }}>
-          We proudly partner with the world's most trusted carriers.
+          {"We proudly partner with the world's most trusted carriers."}
         </Typography>
 
         <Grid container spacing={4} justifyContent="center" alignItems="center">

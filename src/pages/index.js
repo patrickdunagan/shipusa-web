@@ -1,5 +1,4 @@
 import PageLayout from "@/components/PageLayout";
-import ServicesContent from "@/components/ServicesContent";
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import ShippingPartners from "@/components/ShippingPartners";
 import AmazonDropOffSection from "@/components/AmazonDropOffSection";

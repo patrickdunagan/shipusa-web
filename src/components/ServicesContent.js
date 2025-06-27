@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Grid, Paper } from "@mui/material";
+import { Container, Typography, Grid, Paper } from "@mui/material";
 
 export default function ServicesContent() {
   return (

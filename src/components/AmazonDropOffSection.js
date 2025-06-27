@@ -25,10 +25,10 @@ export default function AmazonDropOffSection() {
               Authorized Amazon Drop-Off Location
             </Typography>
             <Typography variant="body1" sx={{ mb: 2 }}>
-              ShipUSA & More is an official Amazon Hub drop-off site. Drop off your Amazon returns with ease — no box or label needed on eligible returns!
+              {"ShipUSA & More is an official Amazon Hub drop-off site. Drop off your Amazon returns with ease — no box or label needed on eligible returns!"}
             </Typography>
             <Typography variant="body2" sx={{ mb: 3 }}>
-              Fast. Convenient. Hassle-free. Just bring in your item and we'll handle the rest.
+              {"Fast. Convenient. Hassle-free. Just bring in your item and we'll handle the rest."}
             </Typography>
             <Button
               variant="contained"

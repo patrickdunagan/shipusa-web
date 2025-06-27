@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import PageLayout from "../components/PageLayout";
 import ShippingPartners from "../components/ShippingPartners";
 import UhaulSection from "../components/UhaulSection";

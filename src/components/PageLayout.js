@@ -17,7 +17,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { palette } from "../styles/palette";
 import Footer from "./Footer";
-import Image from "next/image";
+
 
 // ElevationScroll Component
 function ElevationScroll({ children, window }) {

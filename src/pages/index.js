@@ -6,20 +6,58 @@ import UhaulSection from "@/components/UhaulSection";
 import MailBoxServicesSection from "@/components/MailBoxServicesSection";
 import PersonalServicesSection from "@/components/PersonalServicesSection";
 import Image from "next/image";
+import { palette } from "@/styles/palette";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import AddressSection from "@/components/AddressSection";
 
 export default function Home() {
   return (
     <PageLayout>
+      <AddressSection />
       <TopHomeContent />
+      
       <ShippingPartners />
       <UhaulSection />
       <PersonalServicesSection />
       <MailBoxServicesSection />
       
       <AmazonDropOffSection />
+      <ThunderSupportBanner />
     </PageLayout>
   );
 }
+
+
+function ThunderSupportBanner() {
+  return (
+    <Box
+      sx={{
+        backgroundColor: '#002D62', // Thunder navy blue
+        color: 'white',
+        textAlign: 'center',
+        py: 2,
+        px: 2,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 2,
+      }}
+    >
+      <Image
+        src="/assets/logos/okc.jpg"
+        alt="OKC Thunder Logo"
+        width={80}
+        height={80}
+        style={{ objectFit: 'contain', borderRadius: '5px' }}
+        
+      />
+      <Typography variant="h6" fontWeight="bold">
+        Proud Supporters of the OKC Thunder
+      </Typography>
+    </Box>
+  );
+}
+
 
 function TopHomeContent() {
   const theme = useTheme();

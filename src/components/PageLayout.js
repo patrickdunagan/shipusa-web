@@ -84,7 +84,7 @@ export default function PageLayout({ children }) {
                         <Box display="flex" alignItems="center" gap={1} sx={{ p: 1 }}>
                             {/* <Image src="/assets/logos/white_and_blue.png" alt="ShipUSA Logo" width={160} height={160} /> */}
                             <Typography
-                                variant="h5"
+                                variant="h4"
                                 component="div"
                                 sx={{ fontWeight: "bold", fontStyle: "italic", color: 'white' }}
                             >

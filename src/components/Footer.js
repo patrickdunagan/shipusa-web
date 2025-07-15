@@ -12,7 +12,7 @@ export default function Footer() {
                 color: 'white',
                 px: 4,
                 py: 4,
-                mt: 8
+                //mt: 8
             }
             }
         >

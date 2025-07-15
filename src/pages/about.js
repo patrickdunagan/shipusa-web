@@ -1,5 +1,6 @@
 import { Box, Container, Typography, Grid } from '@mui/material';
 import PageLayout from '@/components/PageLayout';
+import { palette } from '@/styles/palette';
 
 export default function AboutUs() {
   return (
@@ -8,7 +9,7 @@ export default function AboutUs() {
         <Container maxWidth="lg">
         {/* Intro Section */}
         <Box textAlign="center" mb={6}>
-          <Typography variant="h3" fontWeight="bold" color="primary.main" gutterBottom>
+          <Typography variant="h3" fontWeight="bold" color={palette.primary.main} gutterBottom>
             About ShipUSA
           </Typography>
           <Typography variant="h6" color="text.secondary">

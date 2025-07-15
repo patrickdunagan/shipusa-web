@@ -43,8 +43,8 @@ export default function PageLayout({ children }) {
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ width: 250 }}>
-            <Typography variant="h6" sx={{ m: 2, color: palette.primary.accentBlue }}>
-                ShipUSA
+            <Typography variant="h5" fontStyle="italic" sx={{ fontWeight:'bold', m: 2, color: palette.primary.main }}>
+                Ship USA
             </Typography>
             <Divider />
             <List>

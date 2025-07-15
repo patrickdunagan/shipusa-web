@@ -17,6 +17,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { palette } from "../styles/palette";
 import Footer from "./Footer";
+import Image from "next/image";
 
 // ElevationScroll Component
 function ElevationScroll({ children, window }) {
@@ -77,35 +78,48 @@ export default function PageLayout({ children }) {
 
             {/* NAVBAR with Elevation Scroll */}
             <ElevationScroll window={typeof window !== "undefined" ? () => window : undefined}>
-                <AppBar position="fixed" sx={{ bgcolor: "white", color: "black" }}>
+                <AppBar position="fixed" sx={{ bgcolor: "#B22234", color: "white" }}>
                     <Toolbar sx={{ justifyContent: "space-between" }}>
                         {/* Logo & Brand */}
-                        <Box display="flex" alignItems="center" gap={1}>
-                            {/* <Image src="/assets/logo.jpg" alt="ShipUSA Logo" width={40} height={40} /> */}
+                        <Box display="flex" alignItems="center" gap={1} sx={{ p: 1 }}>
+                            {/* <Image src="/assets/logos/white_and_blue.png" alt="ShipUSA Logo" width={160} height={160} /> */}
                             <Typography
                                 variant="h5"
                                 component="div"
-                                sx={{ fontWeight: "bold", fontStyle: "italic", color: palette.primary.accentBlue }}
+                                sx={{ fontWeight: "bold", fontStyle: "italic", color: 'white' }}
                             >
-                                ShipUSA
+                                Ship USA
                             </Typography>
                         </Box>
-
-                        {/* Navigation Buttons (Desktop) */}
-                        <Box display={{ xs: "none", sm: "flex" }} gap={2}>
-                            {menuItems.map((label) => (
-                                <Button
-                                    key={label}
-                                    color="inherit"
-                                    onClick={() =>
-                                        (window.location.href = `/${label === "Home" ? "" : label.toLowerCase()}`)
-                                    }
-                                >
-                                    <Typography variant="button" sx={{ fontSize: "1rem" }}>
-                                        {label}
-                                    </Typography>
-                                </Button>
-                            ))}
+                        <Box display="flex" flexDirection="column" alignItems="flex-end" sx={{ flexGrow: 1 }}>
+                            {/* Navigation Buttons (Desktop) */}
+                            <Box display={{ xs: "none", sm: "flex" }} gap={2}>
+                                {menuItems.map((label) => (
+                                    <Button
+                                        key={label}
+                                        color="inherit"
+                                        onClick={() =>
+                                            (window.location.href = `/${label === "Home" ? "" : label.toLowerCase()}`)
+                                        }
+                                    >
+                                        <Typography variant="button" sx={{ fontSize: "1rem" }}>
+                                            {label}
+                                        </Typography>
+                                    </Button>
+                                ))}
+                            </Box>
+                            {/* <Box
+                                sx={{
+                                    
+                                    color: "white",
+                                    textAlign: "right",
+                                    pr: 2,
+                                    pt: 0.5,
+                                    fontSize: "1.2rem",
+                                }}
+                            >
+                                Hours: Mon–Fri 9am–6pm · Sat 10am–2pm · Sun Closed
+                            </Box> */}
                         </Box>
 
                         {/* Mobile Menu Icon */}
@@ -125,18 +139,7 @@ export default function PageLayout({ children }) {
 
             {/* Spacer for fixed AppBar */}
             <Toolbar />
-            <Box
-                sx={{
-                    bgcolor: palette.primary.main,
-                    color: "white",
-                    textAlign: "right",
-                    px: 2,
-                    py: 0.5,
-                    fontSize: "0.9rem",
-                }}
-            >
-                Hours: Mon–Fri 9am–6pm · Sat 10am–2pm · Sun Closed
-            </Box>
+
 
             {/* Mobile Drawer */}
             <Drawer
@@ -153,7 +156,7 @@ export default function PageLayout({ children }) {
                 {children}
             </Box>
 
-       <Footer />
+            <Footer />
         </Box>
     );
 }

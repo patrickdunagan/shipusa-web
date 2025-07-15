@@ -1,6 +1,6 @@
 export const palette = {
     primary: {
-        main: "#002868", // Navy Blue
+        main: "#B22234", // Flag Red
         contrastText: "#FFFFFF", // White
         light: "#4A90E2", // Lighter Blue
         dark: "#001F4D", // Darker Navy Blue

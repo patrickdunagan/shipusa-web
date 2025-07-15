@@ -1,4 +1,5 @@
 import { Box, Typography, Container, Button, Paper } from "@mui/material";
+import { palette } from "@/styles/palette";
 
 export default function UHaulSection() {
   return (
@@ -48,14 +49,14 @@ export default function UHaulSection() {
             animation: 'fadeInUp 1s ease-out',
           }}
         >
-          <Typography variant="h4" fontWeight="bold" color="primary.main" gutterBottom>
+          <Typography variant="h4" fontWeight="bold" color={palette.primary.main} gutterBottom>
             Authorized U-Haul Dealer
           </Typography>
           <Typography variant="body1" color="text.primary" sx={{ mb: 3 }}>
             ShipUSA is proud to offer trusted U-Haul truck rentals for all your local and long-distance moving needs.
             Get the support and vehicle options you need to make your move simple and smooth.
           </Typography>
-          <Button variant="contained" color="primary" size="large">
+          <Button variant="contained" sx={{ color: palette.primary.main, backgroundColor: palette.primary.contrastText }} href="/uhaul" size="large">
             Reserve a U-Haul
           </Button>
         </Paper>

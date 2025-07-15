@@ -1,5 +1,6 @@
 import { Box, Container, Typography, Grid, useTheme } from "@mui/material";
 import Image from "next/image";
+import TrackingNumberForm from "@/components/TrackingNumberForm";
 
 export default function ShippingPartners() {
   const theme = useTheme();
@@ -38,6 +39,7 @@ export default function ShippingPartners() {
             </Grid>
           ))}
         </Grid>
+        <TrackingNumberForm />
       </Container>
     </Box>
   );

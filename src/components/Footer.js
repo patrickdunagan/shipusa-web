@@ -1,14 +1,13 @@
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { Grid, Stack, Link, Box, Typography, Container } from '@mui/material';
-import { palette } from '../styles/palette';
 
 export default function Footer() {
     return (
         < Box
             component="footer"
             sx={{
-                backgroundColor: '#B22234',
+                backgroundColor: "primary.main",
                 color: 'white',
                 px: 4,
                 py: 4,

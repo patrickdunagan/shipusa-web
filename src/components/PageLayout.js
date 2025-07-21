@@ -13,9 +13,10 @@ import {
     ListItemText,
     Divider,
     useScrollTrigger,
+    ThemeProvider
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { palette } from "../styles/palette";
+import { theme } from "../styles/theme";
 import Footer from "./Footer";
 
 
@@ -43,7 +44,7 @@ export default function PageLayout({ children }) {
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ width: 250 }}>
-            <Typography variant="h5" fontStyle="italic" sx={{ fontWeight:'bold', m: 2, color: palette.primary.main }}>
+            <Typography variant="h5" fontStyle="italic" sx={{ fontWeight:'bold', m: 2, color: 'primary.main' }}>
                 Ship USA
             </Typography>
             <Divider />
@@ -64,6 +65,7 @@ export default function PageLayout({ children }) {
     );
 
     return (
+        <ThemeProvider theme={theme}>
         <Box
             sx={{
                 minHeight: "100vh",
@@ -78,7 +80,7 @@ export default function PageLayout({ children }) {
 
             {/* NAVBAR with Elevation Scroll */}
             <ElevationScroll window={typeof window !== "undefined" ? () => window : undefined}>
-                <AppBar position="fixed" sx={{ bgcolor: "#B22234", color: "white" }}>
+                <AppBar position="fixed" sx={{ bgcolor: theme.palette.primary.main, color: "white" }}>
                     <Toolbar sx={{ justifyContent: "space-between" }}>
                         {/* Logo & Brand */}
                         <Box display="flex" alignItems="center" gap={1} sx={{ p: 1 }}>
@@ -86,7 +88,7 @@ export default function PageLayout({ children }) {
                             <Typography
                                 variant="h4"
                                 component="div"
-                                sx={{ fontWeight: "bold", fontStyle: "italic", color: 'white' }}
+                                sx={{ fontWeight: "bold", fontStyle: "italic", color: "primary.contrastText" }}
                             >
                                 Ship USA
                             </Typography>
@@ -158,5 +160,6 @@ export default function PageLayout({ children }) {
 
             <Footer />
         </Box>
+        </ThemeProvider>
     );
 }

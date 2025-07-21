@@ -1,139 +1,258 @@
 import {
   Box,
   Typography,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
   Paper,
   Grid,
+  Card,
+  CardContent,
   Fade,
+  Slide,
+  useTheme,
+  Container,
+  Chip,
 } from '@mui/material';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PrintIcon from '@mui/icons-material/LocalPrintshop';
 import GavelIcon from '@mui/icons-material/Gavel';
 import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 import MarkEmailUnreadIcon from '@mui/icons-material/MarkEmailUnread';
-import StarIcon from '@mui/icons-material/Star';
 import BusinessIcon from '@mui/icons-material/Business';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import SecurityIcon from '@mui/icons-material/Security';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import { useEffect, useState } from 'react';
-import { palette } from '@/styles/palette';
+import { useState, useEffect } from 'react';
 
 export default function MailboxServicesSection() {
+  const theme = useTheme();
+  const [visible, setVisible] = useState(false);
+  const [cardsVisible, setCardsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer1 = setTimeout(() => setVisible(true), 200);
+    const timer2 = setTimeout(() => setCardsVisible(true), 600);
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, []);
+
   const services = [
-    { icon: <MailOutlineIcon sx={{ color: palette.primary.main }} />, label: 'Private Mailboxes' },
-    { icon: <MarkEmailUnreadIcon sx={{ color: palette.primary.main }} />, label: 'Digital Mailboxes' },
-    { icon: <PrintIcon sx={{ color: palette.primary.main }} />, label: 'Copies & Faxing' },
-    { icon: <GavelIcon sx={{ color: palette.primary.main }} />, label: 'Notary Public' },
-    { icon: <DeleteSweepIcon sx={{ color: palette.primary.main }} />, label: 'Shredding (Paper, CDs, Digital Media)' },
+    { 
+      icon: <MailOutlineIcon sx={{ color: 'primary.main', fontSize: 40 }} />, 
+      label: 'Private Mailboxes',
+      description: 'Secure personal & business mailbox rentals'
+    },
+    { 
+      icon: <MarkEmailUnreadIcon sx={{ color: 'primary.main', fontSize: 40 }} />, 
+      label: 'Digital Mailboxes',
+      description: 'Virtual mail scanning & digital delivery'
+    },
+    { 
+      icon: <PrintIcon sx={{ color: 'primary.main', fontSize: 40 }} />, 
+      label: 'Copies & Faxing',
+      description: 'Professional copying & fax services'
+    },
+    { 
+      icon: <GavelIcon sx={{ color: 'primary.main', fontSize: 40 }} />, 
+      label: 'Notary Public',
+      description: 'Certified notary services available'
+    },
+    { 
+      icon: <DeleteSweepIcon sx={{ color: 'primary.main', fontSize: 40 }} />, 
+      label: 'Secure Shredding',
+      description: 'Paper, CD & digital media destruction'
+    },
+    { 
+      icon: <BusinessIcon sx={{ color: 'primary.main', fontSize: 40 }} />, 
+      label: 'Business Address',
+      description: 'Professional business address service'
+    },
   ];
-
-  const reasonLists = [
-    [
-      { icon: <SecurityIcon color="primary" />, text: 'Secure, private mail handling' },
-      { icon: <LocalShippingIcon color="primary" />, text: 'Convenient package pickup and drop-off' },
-      { icon: <AccessTimeIcon color="primary" />, text: '24/7 access to your mailbox' },
-      { icon: <BusinessIcon color="primary" />, text: 'Professional business address for your company' },
-      { icon: <MailOutlineIcon color="primary" />, text: 'Reliable mail forwarding options' },
-    ],
-    [
-      { icon: <StarIcon color="primary" />, text: 'Keep personal addresses private' },
-      { icon: <BusinessIcon color="primary" />, text: 'Create a local business presence' },
-      { icon: <AccessTimeIcon color="primary" />, text: 'Extended pickup hours' },
-      { icon: <MarkEmailUnreadIcon color="primary" />, text: 'Get email alerts for new mail' },
-      { icon: <SecurityIcon color="primary" />, text: 'Staff receive and sign for packages' },
-    ],
-  ];
-
-  const [reasonIndex, setReasonIndex] = useState(0);
-  const [fadeIn, setFadeIn] = useState(true);
 
  
 
   return (
-    <Box
-      sx={{
-        backgroundImage: 'url(/assets/stock-mail-box.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        minHeight: '70vh',
-        position: 'relative',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        px: 2,
-        py: 8,
-        '&::after': {
-          content: '""',
-          position: 'absolute',
-          inset: 0,
-          background: 'rgba(0, 0, 0, 0.4)',
-          zIndex: 1,
-        },
-      }}
-    >
-      <Grid container justifyContent="center" sx={{ position: 'relative', zIndex: 2 }}>
-        <Grid item xs={12} md={8}>
-          <Paper
-            elevation={6}
-            sx={{
-              backgroundColor: 'rgba(255, 255, 255, 0.85)',
-              backdropFilter: 'blur(8px)',
-              p: 4,
-              borderRadius: 3,
-              transition: 'transform 0.3s ease',
-              '&:hover': {
-                transform: 'scale(1.01)',
-              },
-            }}
-          >
-            <Typography
-              variant="h4"
-              fontWeight="bold"
-              gutterBottom
-              color={palette.primary.main}
+    <Box sx={{ py: 8, backgroundColor: 'white' }}>
+      <Container maxWidth="lg">
+        {/* Header Section */}
+        <Slide direction="up" in={visible} timeout={1000}>
+          <Box sx={{ textAlign: 'center', mb: 6 }}>
+            <Chip
+              label="Business & Communication Services"
               sx={{
-                transition: 'color 0.3s ease',
-                '&:hover': {
-                  color: 'red',
-                  cursor: 'pointer',
-                },
+                backgroundColor: 'primary.main',
+                color: 'white',
+                fontWeight: 'bold',
+                mb: 3,
+                px: 2,
+                py: 1,
+                fontSize: '0.9rem',
+                animation: 'pulse 2s infinite',
+                '@keyframes pulse': {
+                  '0%': { transform: 'scale(1)' },
+                  '50%': { transform: 'scale(1.05)' },
+                  '100%': { transform: 'scale(1)' }
+                }
+              }}
+            />
+            
+            <Typography
+              variant="h3"
+              fontWeight="bold"
+              color="primary.main"
+              gutterBottom
+              sx={{
+                background: `linear-gradient(45deg, ${theme.palette.primary.main} 30%, ${theme.palette.primary.light} 90%)`,
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                mb: 2
               }}
             >
-              Mailbox & Business Services
+              Professional Mailbox & Business Solutions
             </Typography>
-
-            <Typography variant="body1" sx={{ mb: 3 }}>
-              ShipUSA offers secure, reliable, and convenient services for individuals and businesses:
+            
+            <Typography 
+              variant="h6" 
+              color="text.secondary" 
+              sx={{ maxWidth: 600, mx: 'auto', lineHeight: 1.6 }}
+            >
+              Secure mailboxes, notary services, and business support to keep your personal and professional life organized.
             </Typography>
+          </Box>
+        </Slide>
 
-            <List disablePadding sx={{ mb: 3 }}>
-              {services.map(({ icon, label }) => (
-                <ListItem
-                  key={label}
+        {/* Services Grid */}
+        <Grid container spacing={3} justifyContent="center">
+          {services.map((service, index) => (
+            <Grid item xs={12} sm={6} md={4} key={service.label}>
+              <Fade in={cardsVisible} timeout={1000 + index * 150}>
+                <Card
+                  elevation={4}
                   sx={{
-                    px: 0,
-                    py: 1,
-                    transition: 'background-color 0.2s ease',
+                    height: '100%',
+                    borderRadius: 3,
+                    border: '2px solid transparent',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    cursor: 'pointer',
+                    transform: cardsVisible ? 'translateY(0)' : 'translateY(20px)',
                     '&:hover': {
-                      backgroundColor: '#e8f0fe',
-                      borderRadius: 1,
-                    },
+                      transform: 'translateY(-8px) scale(1.02)',
+                      boxShadow: `0 12px 24px rgba(${theme.palette.primary.main.replace('#', '').match(/.{2}/g).map(hex => parseInt(hex, 16)).join(', ')}, 0.2)`,
+                      borderColor: 'primary.main',
+                    }
                   }}
                 >
-                  <ListItemIcon>{icon}</ListItemIcon>
-                  <ListItemText primary={label} primaryTypographyProps={{ fontWeight: 500 }} />
-                </ListItem>
-              ))}
-            </List>
-
-      
-          </Paper>
+                  <CardContent 
+                    sx={{ 
+                      p: 3, 
+                      textAlign: 'center',
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between'
+                    }}
+                  >
+                    <Box>
+                      <Box 
+                        sx={{ 
+                          mb: 2,
+                          p: 2,
+                          borderRadius: '50%',
+                          backgroundColor: 'rgba(178, 34, 52, 0.1)',
+                          display: 'inline-flex',
+                          transition: 'all 0.3s ease',
+                          '&:hover': {
+                            backgroundColor: 'primary.main',
+                            '& svg': {
+                              color: 'white !important',
+                              transform: 'scale(1.1)'
+                            }
+                          }
+                        }}
+                      >
+                        {service.icon}
+                      </Box>
+                      
+                      <Typography
+                        variant="h6"
+                        fontWeight="bold"
+                        color="primary.main"
+                        gutterBottom
+                        sx={{ fontSize: '1.1rem' }}
+                      >
+                        {service.label}
+                      </Typography>
+                      
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ lineHeight: 1.5 }}
+                      >
+                        {service.description}
+                      </Typography>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Fade>
+            </Grid>
+          ))}
         </Grid>
-      </Grid>
+
+        {/* Features Section */}
+        <Fade in={cardsVisible} timeout={2000}>
+          <Box sx={{ mt: 6 }}>
+            <Grid container spacing={4} justifyContent="center">
+              <Grid item xs={12} md={6}>
+                <Paper
+                  elevation={2}
+                  sx={{
+                    p: 4,
+                    backgroundColor: 'primary.main',
+                    color: 'white',
+                    borderRadius: 3,
+                    '&:hover': {
+                      transform: 'scale(1.02)',
+                      transition: 'all 0.3s ease'
+                    }
+                  }}
+                >
+                  <SecurityIcon sx={{ fontSize: 40, mb: 2 }} />
+                  <Typography variant="h5" fontWeight="bold" gutterBottom>
+                    Secure & Private
+                  </Typography>
+                  <Typography variant="body1">
+                    Your mail and packages are safe with us. Professional handling with 24/7 secure access to your mailbox.
+                  </Typography>
+                </Paper>
+              </Grid>
+              
+              <Grid item xs={12} md={6}>
+                <Paper
+                  elevation={2}
+                  sx={{
+                    p: 4,
+                    backgroundColor: 'grey.100',
+                    borderRadius: 3,
+                    border: '2px solid',
+                    borderColor: 'primary.main',
+                    '&:hover': {
+                      transform: 'scale(1.02)',
+                      transition: 'all 0.3s ease'
+                    }
+                  }}
+                >
+                  <BusinessIcon sx={{ fontSize: 40, mb: 2, color: 'primary.main' }} />
+                  <Typography variant="h5" fontWeight="bold" gutterBottom color="primary.main">
+                    Business Ready
+                  </Typography>
+                  <Typography variant="body1" color="text.secondary">
+                    Establish a professional presence with our business address services and notary support.
+                  </Typography>
+                </Paper>
+              </Grid>
+            </Grid>
+          </Box>
+        </Fade>
+      </Container>
     </Box>
   );
 }

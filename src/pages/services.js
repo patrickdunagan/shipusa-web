@@ -9,24 +9,38 @@ import PersonalServicesSection from "../components/PersonalServicesSection";
 export default function Services() {
     return (
         <PageLayout>
-            <Box sx={{ maxWidth: 800, mx: 'auto', mb: 6, px: 2, pt:2 }}>
-                <Typography variant="h4" fontWeight="bold" color="primary.main" gutterBottom>
-                    Our Services
+            {/* Hero Section */}
+            <Box sx={{ maxWidth: 1000, mx: 'auto', mb: 8, px: 2, pt: 4 }}>
+                <Typography variant="h3" fontWeight="bold" color="primary.main" gutterBottom align="center">
+                    Complete Service Solutions
                 </Typography>
-                <Typography variant="body1" color="text.secondary">
-                    {"At ShipUSA, we pride ourselves on offering a full range of essential services designed to make your life easier."}
-                    {" From reliable shipping and receiving to secure private mailboxes, passport photos, fingerprinting, and notary"}
-                    {" services — we’re your one-stop destination for both personal and business needs. Our team is known for being"}
-                    {" friendly, helpful, and always willing to go the extra mile. Whether you’re dropping off a package, making copies,"}
-                    {" or renting a U-Haul, you’ll always be greeted with a smile and a commitment to top-notch service."}
+                <Typography variant="h6" color="text.secondary" align="center" sx={{ mb: 4, lineHeight: 1.6 }}>
+                    Your trusted partner for shipping, business services, and personal needs
+                </Typography>
+                <Typography variant="body1" color="text.secondary" align="center" sx={{ maxWidth: 700, mx: 'auto' }}>
+                    {"From nationwide shipping with trusted carriers to secure mailbox services, U-Haul rentals, "}
+                    {"and essential personal services like passport photos and notary — ShipUSA & More is your "}
+                    {"comprehensive solution hub. Experience friendly service and reliable results every time."}
                 </Typography>
             </Box>
+
+            {/* Core Shipping Services - Leading with our primary service */}
             <ShippingPartners />
 
+            {/* Moving & Logistics */}
             <UhaulSection />
-            <AmazonDropOffSection />
-            <MailBoxServicesSection />
+            {/* Personal & Professional Services */}
             <PersonalServicesSection />
+
+
+            {/* Business & Communication Services */}
+            <MailBoxServicesSection />
+
+
+
+            {/* Amazon Services - Convenient returns */}
+            <AmazonDropOffSection />
+
         </PageLayout>
     )
 }

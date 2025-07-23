@@ -37,7 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
           property="og:description"
           content="Authorized shipping center for all major carriers. U-Haul rentals, private mailboxes, notary services, and professional business solutions all in one location."
         />
-        <meta property="og:image" content="https://shipusaandmore.com/assets/og-image.jpg" />
+        <meta property="og:image" content="https://shipusaandmore.com/assets/stock-flag.jpg" />
         <meta property="og:site_name" content="ShipUSA & More" />
         <meta property="og:locale" content="en_US" />
         
@@ -49,7 +49,7 @@ export default function App({ Component, pageProps }: AppProps) {
           property="twitter:description"
           content="Authorized shipping center for all major carriers. U-Haul rentals, private mailboxes, notary services, and professional business solutions."
         />
-        <meta property="twitter:image" content="https://shipusaandmore.com/assets/og-image.jpg" />
+        <meta property="twitter:image" content="https://shipusaandmore.com/assets/stock-flag.jpg" />
         
         {/* Geo Tags */}
         <meta name="geo.region" content="US" />
@@ -65,22 +65,22 @@ export default function App({ Component, pageProps }: AppProps) {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "ShipUSA & More",
-              "image": "https://shipusaandmore.com/assets/logo.jpg",
+              "image": "https://shipusaandmore.com/assets/logos/shipusa-red-transparent.png",
               "@id": "https://shipusaandmore.com/",
               "url": "https://shipusaandmore.com/",
-              "telephone": "+1-555-123-4567",
+              "telephone": "+1-405-400-1011",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "123 Main Street",
-                "addressLocality": "Your City",
-                "addressRegion": "Your State",
-                "postalCode": "12345",
+                "streetAddress": "3033 NW 178th St",
+                "addressLocality": "Edmond",
+                "addressRegion": "OK",
+                "postalCode": "73012",
                 "addressCountry": "US"
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 40.75,
-                "longitude": -73.98
+                "latitude": 35.65359983540524,
+                "longitude": -97.57191458036665
               },
               "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",
@@ -91,12 +91,12 @@ export default function App({ Component, pageProps }: AppProps) {
                   "Thursday",
                   "Friday"
                 ],
-                "opens": "09:00",
-                "closes": "18:00"
+                "opens": "08:00",
+                "closes": "19:00"
               },
               "sameAs": [
-                "https://www.facebook.com/shipusaandmore",
-                "https://www.instagram.com/shipusaandmore"
+                "https://www.facebook.com/profile.php?id=61577812707146",
+                "https://www.instagram.com/shipusaedmond"
               ],
               "priceRange": "$",
               "description": "Complete shipping and business solutions including FedEx, UPS, DHL, USPS shipping, U-Haul rentals, private mailboxes, notary services, and passport photos.",
@@ -104,8 +104,8 @@ export default function App({ Component, pageProps }: AppProps) {
                 "@type": "GeoCircle",
                 "geoMidpoint": {
                   "@type": "GeoCoordinates",
-                  "latitude": 40.75,
-                  "longitude": -73.98
+                  "latitude": 35.65359983540524,
+                "longitude": -97.57191458036665
                 },
                 "geoRadius": "25000"
               },
